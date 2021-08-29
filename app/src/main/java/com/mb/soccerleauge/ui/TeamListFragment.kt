@@ -32,7 +32,21 @@ class TeamListFragment : Fragment() {
         getTeams()
     }
 
-  
+    private fun getTeams() {
+        api.getAllTeamByLeague("turkey").enqueue(object : Callback<List<Team>>{
+            override fun onResponse(call: Call<List<Team>>, response: Response<List<Team>>) {
+                when(response.code()){
+                    200->getTeamList(response.body()!!)
+                    else -> null
+                }
+            }
+
+            override fun onFailure(call: Call<List<Team>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
 
     private fun getTeamList(body: List<Team>) {
         adapter.submitList(body)
