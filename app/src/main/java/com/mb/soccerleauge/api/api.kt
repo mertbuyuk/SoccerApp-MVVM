@@ -9,7 +9,7 @@ private var _api: SoccerLeaugeApi? = null
 // Accessing this will crash if done before calling generate()
 val api get() = _api!!
 
-const val BASE_URL = "https://www.thesportsdb.com/api/v1/json/1"
+const val BASE_URL = "https://api.football-data.org/v2/competitions/2002/"
 
 fun generateApi(context: Context) {
     if (_api != null) return
