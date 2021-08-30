@@ -1,13 +1,16 @@
 package com.mb.soccerleauge.ui.teamlist
 
+import android.util.Log
 import com.mb.soccerleauge.api.api
 import com.mb.soccerleauge.data.TeamDetail
+import com.mb.soccerleauge.data.TeamResponse
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.Failure
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.Succes
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.UnexpectedError
 import com.mb.soccerleauge.utils.Constant
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+
 
 class TeamListRepository {
 
@@ -18,7 +21,7 @@ class TeamListRepository {
             }catch (e : Exception){
                 null
             }
-
+        Log.i("response", response?.body()?.list.toString())
         when(response?.code()){
             200 -> {
                 emit(Succes(response.body()!!.list))
@@ -30,7 +33,7 @@ class TeamListRepository {
     }
 
     sealed class TeamListResult(){
-        class Succes(val teams : List<TeamDetail>) : TeamListResult()
+        class Succes(val teamList : List<TeamDetail>) : TeamListResult()
         object Failure : TeamListResult()
         object UnexpectedError  : TeamListResult()
     }
