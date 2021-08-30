@@ -12,8 +12,7 @@ import com.mb.soccerleauge.databinding.FragmentTeamListBinding
 
 
 class TeamListFragment : Fragment() {
-    private  var _binding: FragmentTeamListBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentTeamListBinding
 
     private val viewModel : TeamListViewModel by viewModels {
         TeamListViewModelFactory(TeamListRepository())
@@ -23,7 +22,7 @@ class TeamListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentTeamListBinding.inflate(inflater, container, false)
+        binding = FragmentTeamListBinding.inflate(inflater, container, false)
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
@@ -31,10 +30,5 @@ class TeamListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
