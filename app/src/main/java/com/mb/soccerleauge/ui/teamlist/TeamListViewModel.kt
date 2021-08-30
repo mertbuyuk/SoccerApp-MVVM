@@ -6,10 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mb.soccerleauge.data.TeamDetail
+import com.mb.soccerleauge.db.db
 import com.mb.soccerleauge.teamListadapter
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.Failure
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.Succes
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.UnexpectedError
+import com.mb.soccerleauge.utils.toTeamEntityList
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -31,8 +33,9 @@ class TeamListViewModel(private val repository: TeamListRepository) : ViewModel(
         }
     }
 
-    private fun onSucces(teamList: List<TeamDetail>) {
+    private suspend fun onSucces(teamList: List<TeamDetail>) {
         _teams.value = teamList
+        db.teamDao().insertAll(teamList.toTeamEntityList())
     }
 
     private fun onFail(){
