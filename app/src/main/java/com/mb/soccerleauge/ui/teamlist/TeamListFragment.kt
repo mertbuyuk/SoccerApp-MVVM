@@ -7,7 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.mb.soccerleauge.adapter.TeamListAdapter
+import androidx.navigation.fragment.findNavController
+import com.mb.soccerleauge.R
 import com.mb.soccerleauge.databinding.FragmentTeamListBinding
 
 
@@ -29,6 +30,11 @@ class TeamListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        binding.btnFixture.setOnClickListener {
+            val action = TeamListFragmentDirections.actionTeamListFragmentToFixtureFragment()
+            findNavController().navigate(action)
+        }
         super.onViewCreated(view, savedInstanceState)
     }
 }

@@ -1,9 +1,8 @@
 package com.mb.soccerleauge
 
-import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.mb.soccerleauge.adapter.TeamListAdapter
+import com.mb.soccerleauge.ui.adapter.TeamListAdapter
 import com.mb.soccerleauge.data.TeamDetail
 
 val teamListadapter = TeamListAdapter()

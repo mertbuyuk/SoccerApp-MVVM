@@ -15,11 +15,8 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="32dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:checkable="true"
         app:cardBackgroundColor = "@color/tl_back_200"
-        app:strokeWidth="1dp"
+        app:strokeWidth="2dp"
         app:strokeColor="@color/white"
         >
 

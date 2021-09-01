@@ -1,4 +1,4 @@
-package com.mb.soccerleauge.adapter
+package com.mb.soccerleauge.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mb.soccerleauge.data.TeamDetail
 import com.mb.soccerleauge.databinding.ItemTeamlistBinding
 
-class TeamListAdapter : ListAdapter<TeamDetail,TeamListAdapter.TeamViewHolder>(DiffCallback()) {
+class TeamListAdapter : ListAdapter<TeamDetail, TeamListAdapter.TeamViewHolder>(DiffCallback()) {
     class TeamViewHolder(private val binding : ItemTeamlistBinding) : RecyclerView.ViewHolder(binding.root) {
        fun bind(team: TeamDetail){
            binding.item = team

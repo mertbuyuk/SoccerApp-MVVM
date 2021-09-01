@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="fixtureItem"
+            type="com.mb.soccerleauge.data.Fixture" />
+    </data>
+
+<com.google.android.material.card.MaterialCardView android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="76dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_launcher_background"
+            android:scaleType="centerCrop"
+            />
+
+            <TextView
+                android:id="@+id/homeTeamTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Manchester"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+            <TextView
+                android:id="@+id/awayTeamTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Chelsea"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="76dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_launcher_background" />
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
+</layout>

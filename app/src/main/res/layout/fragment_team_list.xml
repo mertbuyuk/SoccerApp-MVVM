@@ -8,22 +8,31 @@
     </data>
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.teamlist.TeamListFragment"
         tools:viewBindingIgnore="true"
         >
+        <Button
+            android:id="@+id/btnFixture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fikstür Oluştur"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:textAllCaps="false"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_teamlist"
+            android:layout_below="@id/btnFixture"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:teams="@{viewModel.teams}"
-            />
+            tools:listitem="@layout/item_teamlist" />
 
-    </LinearLayout>
+    </RelativeLayout>
 </layout>
