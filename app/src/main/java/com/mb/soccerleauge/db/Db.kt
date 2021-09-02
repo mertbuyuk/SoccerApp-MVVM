@@ -15,5 +15,5 @@ fun createDatabase(context: Context){
         context,
         AppDatabase::class.java,
         "app-db"
-    ).build()
+    ) .fallbackToDestructiveMigration().build()
 }

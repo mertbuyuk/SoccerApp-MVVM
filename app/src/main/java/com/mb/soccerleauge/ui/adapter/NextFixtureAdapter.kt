@@ -31,7 +31,4 @@ class NextFixtureAdapter(private val fixtureList: ArrayList<Fixture>) : ListAdap
 
         override fun areContentsTheSame(oldItem: Fixture, newItem: Fixture) = oldItem == newItem
     }
-    fun addData(list: List<Fixture>) {
-        fixtureList.addAll(list)
-    }
 }

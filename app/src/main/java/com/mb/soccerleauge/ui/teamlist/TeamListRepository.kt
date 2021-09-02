@@ -16,7 +16,7 @@ class TeamListRepository {
 
     suspend fun fetchList() : Flow<TeamListResult> = flow {
 
-       val cachedTeamList = db.teamDao().getAllTeam()
+      val cachedTeamList = db.teamDao().getAllTeam()
         if (cachedTeamList.isNotEmpty()){
             emit(Succes(cachedTeamList.toTeamDetailList()))
         }

@@ -10,5 +10,7 @@ data class TeamResponse (
 data class TeamDetail(
     val id : Int,
     val shortName : String
-)
+) {
+
+}
 
