@@ -2,4 +2,6 @@
     <string name="app_name">SoccerLeauge</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_fixture">Fikstür Oluştur</string>
+    <string name="darkmode">Dark Mode</string>
 </resources>

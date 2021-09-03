@@ -1,6 +1,7 @@
 package com.mb.soccerleauge.ui.teamlist
 
 import android.util.Log
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.mb.soccerleauge.data.Fixture
 import com.mb.soccerleauge.data.TeamDetail
 import com.mb.soccerleauge.db.db
+import com.mb.soccerleauge.sharedpref.SharedPref
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.Failure
 import com.mb.soccerleauge.ui.teamlist.TeamListRepository.TeamListResult.Succes
 import com.mb.soccerleauge.utils.toFixtureEntityList

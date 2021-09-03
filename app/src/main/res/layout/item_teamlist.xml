@@ -15,9 +15,6 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="32dp"
-        app:cardBackgroundColor = "@color/tl_back_200"
-        app:strokeWidth="2dp"
-        app:strokeColor="@color/white"
         >
 
         <TextView
@@ -26,6 +23,7 @@
             android:layout_height="wrap_content"
             tools:text="Manchester"
             android:text="@{item.shortName}"
+            android:textColor="#656464"
             android:layout_marginStart="16dp"
             android:layout_gravity="center"
             />

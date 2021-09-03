@@ -1,19 +1,16 @@
 package com.mb.soccerleauge.ui.fixture
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.viewpager2.widget.ViewPager2
+import androidx.appcompat.app.AppCompatDelegate
 import com.mb.soccerleauge.databinding.FragmentFixtureBinding
 import com.mb.soccerleauge.sharedpref.SharedPref
 import com.mb.soccerleauge.ui.adapter.FixtureViewPagerAdapter
 import com.mb.soccerleauge.ui.fixture.weekFixture.WeekFixtureFragment
-import com.mb.soccerleauge.ui.teamlist.TeamListRepository
-import com.mb.soccerleauge.ui.teamlist.TeamListViewModel
-import com.mb.soccerleauge.ui.teamlist.TeamListViewModelFactory
 
 class FixtureFragment : Fragment() {
     private lateinit var binding : FragmentFixtureBinding
@@ -30,11 +27,11 @@ class FixtureFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fragmentList.add(WeekFixtureFragment(binding.fixtureViewPager))
+      //  fragmentList.add(WeekFixtureFragment())
 
         val size = SharedPref(requireContext()).load("week")
-        for (i in 0..size-2){
-            fragmentList.add(WeekFixtureFragment(binding.fixtureViewPager))
+        for (i in 0..16){
+            fragmentList.add(WeekFixtureFragment())
             SharedPref(requireContext()).save(i+1,(i+1).toString())
         }
 
@@ -43,7 +40,6 @@ class FixtureFragment : Fragment() {
             requireActivity().supportFragmentManager,
             lifecycle
         )
-
 
         binding.fixtureViewPager.adapter = adapter
     }

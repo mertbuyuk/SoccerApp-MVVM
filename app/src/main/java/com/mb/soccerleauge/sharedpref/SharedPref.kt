@@ -13,6 +13,11 @@ class SharedPref(context : Context) {
     fun save(len : Int,key : String) = prefs.edit(commit = true){
         putInt(key,len)
     }
+    fun saveBoolean(value : Boolean,key : String) = prefs.edit(commit = true){
+        putBoolean(key,value)
+    }
+
+    fun loadBoolen(key : String): Boolean = prefs.getBoolean(key, false)
 
     fun load(key : String): Int = prefs.getInt(key, 0)
 
